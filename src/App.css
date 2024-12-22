@@ -1,0 +1,264 @@
+body {
+  background-color: #fbfbfb;
+}
+
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+
+header {
+  user-select: none;
+}
+
+img {
+  user-select: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0;
+  /* Height of navbar */
+  width: 240px;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .chat-container {
+    height: 62vh;
+  }
+}
+
+.upper-menu {
+  user-select: none;
+}
+
+/* Hist-session related */
+.hist-sess-container {
+  margin-top: 15px;
+  height: calc(100vh - 125px);
+  overflow-y: scroll;
+}
+
+.hist-sess-container .active {
+  background-color: #80a2e0;
+  border-color: #99b4e6;
+}
+
+.chat-title {
+  user-select: none;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.edit,
+.delete {
+  user-select: none;
+}
+
+.bi {
+  cursor: pointer;
+}
+
+/* Chat-container */
+.chat-container {
+  height: 76vh;
+  overflow-y: scroll;
+}
+
+.chat-container .chat {
+  padding: 25px 10px;
+  justify-content: center;
+}
+
+.chat .chat-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.chat .chat-content span {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--icon-color);
+  visibility: hidden;
+}
+
+.chat:hover .chat-content:not(:has(.typing-animation), :has(.error)) span {
+  visibility: visible;
+}
+
+.chat .chat-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat .chat-details img {
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.chat .chat-details .response-img {
+  max-width: 800px; /* Maximum width the image can take */
+  max-height: 600px; /* Maximum height the image can take */
+  width: auto; /* Adjust width to its original aspect ratio */
+  height: auto; /* Adjust height to its original aspect ratio */
+  display: block;
+  margin-top: 10px;
+}
+
+.chat .chat-details p {
+  white-space: pre-wrap;
+  font-size: 1.05rem;
+  padding: 0 50px 0 25px;
+  color: var(--text-color);
+  word-break: break-word;
+  margin-right: auto;
+}
+
+.chat .chat-details .markdown-body {
+  padding: 0 50px 0 25px;
+  margin-right: auto;
+}
+
+.chat .chat-details .markdown-body p {
+  padding: 0;
+}
+
+.chat .chat-details p.error {
+  color: #e55865;
+}
+
+.chat .typing-animation {
+  padding-left: 25px;
+  display: inline-flex;
+}
+
+.typing-animation .typing-dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin: 0 3px;
+  opacity: 0.7;
+  background: var(--text-color);
+  animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+
+.typing-animation .typing-dot:first-child {
+  margin-left: 0;
+}
+
+@keyframes animateDots {
+  0%,
+  44% {
+    transform: translateY(0px);
+  }
+
+  28% {
+    opacity: 0.4;
+    transform: translateY(-6px);
+  }
+
+  44% {
+    opacity: 0.2;
+  }
+}
+
+/* typing-container */
+.typing-container {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing-container .typing-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.typing-container .typing-textarea {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.typing-textarea textarea {
+  resize: none;
+  height: 70px;
+  width: 100%;
+  border: none;
+  padding: 15px 45px 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.typing-textarea textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+.typing-content span {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+}
+
+/* send button */
+.typing-textarea span {
+  position: absolute;
+  right: 10px;
+  /* bottom: 0; */
+  visibility: hidden;
+}
+
+.typing-textarea textarea:valid ~ span {
+  visibility: visible;
+}
+
+/* Hide search button initially */
+#search-btn {
+  visibility: hidden;
+}
+
+.modal {
+  user-select: none;
+}
+
+.modal .modal-content {
+  user-select: none;
+}
+
+.modal .modal-header {
+  user-select: none;
+}
+
+.modal .modal-body {
+  user-select: none;
+}
